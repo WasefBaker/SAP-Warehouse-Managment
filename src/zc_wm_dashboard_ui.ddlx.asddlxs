@@ -1,0 +1,65 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  typeName: 'Storage Bin',
+  typeNamePlural: 'Warehouse Dashboard',
+  title: {
+    type: #STANDARD,
+    value: 'BinId'
+  }
+}
+
+@UI.chart: [{
+  qualifier: 'BinUtilization',
+  title: 'Storage Bin Utilization',
+  chartType: #COLUMN,
+  dimensions: [ 'BinId' ],
+  measures: [ 'UtilizationPrecent' ],
+  dimensionAttributes: [{
+    dimension: 'BinId',
+    role: #CATEGORY
+  }],
+  measureAttributes: [{
+    measure: 'UtilizationPrecent',
+    role: #AXIS_1
+  }]
+}]
+
+annotate entity ZC_WM_DASHBOARD with
+{
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Storage Bin'
+  BinId;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @EndUserText.label: 'Warehouse'
+  WarehouseId;
+
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Description'
+  BinDescription;
+
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Capacity'
+  Capacity;
+
+  @UI.lineItem: [{ position: 50 }]
+  @EndUserText.label: 'Used'
+  UsedCapacity;
+
+  @UI.lineItem: [{ position: 60 }]
+  @EndUserText.label: 'Free'
+  FreeCapacity;
+
+  @UI.lineItem: [{ position: 70 }]
+  @EndUserText.label: 'Utilization (%)'
+  UtilizationPrecent;
+
+  @UI.lineItem: [{ position: 80, criticality: 'StatusCriticality' }]
+  @EndUserText.label: 'Status'
+  UtilizationStatus;
+  
+ 
+}

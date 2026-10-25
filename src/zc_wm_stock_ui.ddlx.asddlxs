@@ -1,0 +1,61 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Warehouse Stock',
+  typeNamePlural: 'Warehouse Stocks',
+  title: {
+    type: #STANDARD,
+    value: 'MaterialId'
+  },
+  description: {
+    type: #STANDARD,
+    value: 'MaterialName'
+  }
+}
+
+annotate entity ZC_WM_STOCK with 
+{
+    @UI.facet: [ 
+        {
+            id: 'StockDetails',
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'Stock Details',
+            position: 10
+        }
+    ]
+       
+    
+    
+    
+    @UI.lineItem: [{ position: 10 }]
+    @UI.selectionField: [{ position: 10 }]
+    @UI.identification: [ { position: 10 } ]
+    @EndUserText.label: 'Material ID'
+    MaterialId;
+    
+    @UI.lineItem: [{ position: 20 }]
+    @UI.identification: [ { position: 20 } ]
+    @EndUserText.label: 'Material Name'
+    MaterialName;
+
+    @UI.lineItem: [{ position: 30 }]
+    @UI.selectionField: [{ position: 20 }]
+    @UI.identification: [ { position: 30 } ]
+    @EndUserText.label: 'Warehouse'
+    WarehouseId;
+
+    @UI.lineItem: [{ position: 40 }]
+    @UI.identification: [ { position: 40 } ]
+    @EndUserText.label: 'Storage Bin'
+    BinId;
+
+    @UI.lineItem: [{ position: 50 }]
+    @UI.identification: [ { position: 50 } ]
+    @EndUserText.label: 'Quantity'
+    Quantity;
+
+    @UI.lineItem: [{ position: 60 }]
+    @UI.identification: [ { position: 60 } ]
+    @EndUserText.label: 'Unit'
+    Unit;
+    
+}

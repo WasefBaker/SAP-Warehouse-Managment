@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Storage Bin',
+  typeNamePlural: 'Storage Bins',
+  title: {
+    type: #STANDARD,
+    value: 'BinId'
+  },
+  description: {
+    type: #STANDARD,
+    value: 'Description'
+  }
+}
+
+annotate entity ZC_WM_RAP_BIN with
+{
+  @UI.facet: [
+    {
+      id: 'BinDetails',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Storage Bin Details',
+      position: 10
+    }
+  ]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Storage Bin'
+  BinId;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @EndUserText.label: 'Warehouse'
+  WarehouseId;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  @EndUserText.label: 'Description'
+  Description;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  @EndUserText.label: 'Capacity'
+  Capacity;
+}

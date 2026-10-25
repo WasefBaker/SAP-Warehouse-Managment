@@ -1,0 +1,4 @@
+@EndUserText.label: 'RAP Warehouse Bin Service'
+define service ZUI_WM_RAP_BIN {
+  expose ZC_WM_RAP_BIN as StorageBins;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Warehouse Stock OData Service'
+define service ZUI_WM_STOCK {
+  expose ZC_WM_STOCK as WarehouseStock;
+}

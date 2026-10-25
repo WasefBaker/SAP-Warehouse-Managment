@@ -1,0 +1,50 @@
+managed implementation in class zbp_i_wm_rap_bin unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_WM_RAP_BIN alias Bin
+persistent table zwm_rap_bin
+draft table zwm_rap_bin_d
+lock master total etag LastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  validation validateCapacity on save {
+    create;
+    update;
+    field Capacity;
+    }
+
+  field ( readonly : update ) BinId;
+
+  field ( readonly ) CreatedBy,
+                     CreatedAt,
+                     LastChangedBy,
+                     LastChangedAt,
+                     LocalLastChangedAt;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare {
+      validation validateCapacity;
+    }
+
+  mapping for zwm_rap_bin
+  {
+    BinId              = bin_id;
+    WarehouseId        = warehouse_id;
+    Description        = description;
+    Capacity           = capacity;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

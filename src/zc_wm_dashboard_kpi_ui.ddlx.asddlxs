@@ -1,0 +1,33 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Warehouse KPI',
+  typeNamePlural: 'Warehouse KPIs',
+  title: {
+    type: #STANDARD,
+    value: 'WarehouseId'
+  }
+}
+
+annotate entity ZC_WM_DASHBOARD_KPI with
+{
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Warehouse'
+  WarehouseId;
+
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Total Capacity'
+  TotalCapacity;
+
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Used Capacity'
+  TotalUsed;
+
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Free Capacity'
+  TotalFree;
+
+  @UI.lineItem: [{ position: 50 }]
+  @EndUserText.label: 'Utilization (%)'
+  TotalUtilizationPercent;
+}

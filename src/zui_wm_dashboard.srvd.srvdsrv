@@ -1,0 +1,5 @@
+@EndUserText.label: 'Warehouse Dashboard Service'
+define service ZUI_WM_DASHBOARD {
+  expose ZC_WM_DASHBOARD     as WarehouseBins;
+  expose ZC_WM_DASHBOARD_KPI as WarehouseKPIs;
+}
