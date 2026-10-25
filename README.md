@@ -1,2 +1,2 @@
 # SAP-Warehouse-Managment
-Warehouse Management with Smart Putaway Algorithm
+Initial working version of Smart Putaway Engine with capacity, weight and storage category validation, bin recommendation and decision analysis.
